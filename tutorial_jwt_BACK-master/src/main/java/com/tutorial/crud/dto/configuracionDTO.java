@@ -6,16 +6,16 @@ public class configuracionDTO {
 	@NotBlank
 	private String serviceName;
 	@NotBlank
-	private String enpointAlpha;
+	private String endpointAlpha;
 	
 	public configuracionDTO() {
 		super();
 	}
 
-	public configuracionDTO(@NotBlank String serviceName, @NotBlank String enpointAlpha) {
+	public configuracionDTO(@NotBlank String serviceName, @NotBlank String endpointAlpha) {
 		super();
 		this.serviceName = serviceName;
-		this.enpointAlpha = enpointAlpha;
+		this.endpointAlpha = endpointAlpha;
 	}
 	public String getServiceName() {
 		return serviceName;
@@ -26,10 +26,10 @@ public class configuracionDTO {
 	}
 
 	public String getEnpoint_alpha() {
-		return enpointAlpha;
+		return endpointAlpha;
 	}
 
-	public void setEnpointAlpha(String enpointAlpha) {
-		this.enpointAlpha = enpointAlpha;
+	public void setEnpointAlpha(String endpointAlpha) {
+		this.endpointAlpha = endpointAlpha;
 	}
 }

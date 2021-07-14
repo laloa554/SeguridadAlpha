@@ -24,11 +24,11 @@ public class configuracionService {
         return configuracionRepository.findById(id);
     }
 
-    public Optional<configuracion> findByServiceName(String service_name){
-        return configuracionRepository.findByServiceName(service_name);
+    public Optional<configuracion> findByServiceName(String serviceName){
+        return configuracionRepository.findByServiceName(serviceName);
     }
 
-    public void  save(configuracion configuracion){
+    public void save(configuracion configuracion){
     	configuracionRepository.save(configuracion);
     }
 
@@ -40,8 +40,8 @@ public class configuracionService {
         return configuracionRepository.existsById(id);
     }
 
-    public boolean existsByServiceName(String service_name){
-        return configuracionRepository.existsByServiceName(service_name);
+    public boolean existsByServiceName(String serviceName){
+        return configuracionRepository.existsByServiceName(serviceName);
     }
 
 }

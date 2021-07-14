@@ -9,6 +9,6 @@ import com.tutorial.crud.entity.configuracion;
 
 @Repository
 public interface configuracionRepository extends JpaRepository<configuracion, Integer>{
-	 Optional<configuracion> findByServiceName(String nombre);
-	 boolean existsByServiceName(String nombre);
+	 Optional<configuracion> findByServiceName(String serviceName);
+	 boolean existsByServiceName(String serviceName);
 }

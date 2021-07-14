@@ -11,17 +11,17 @@ public class configuracion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String serviceName;
-	private String enpointAlpha;
+	private String endpointAlpha;
 	
 	public configuracion() {
 		super();
 	}
 
-	public configuracion(int id, String serviceName, String enpointAlpha) {
+	public configuracion(int id, String serviceName, String endpointAlpha) {
 		super();
 		this.id = id;
 		this.serviceName = serviceName;
-		this.enpointAlpha = enpointAlpha;
+		this.endpointAlpha = endpointAlpha;
 	}
 
 	public int getId() {
@@ -40,11 +40,11 @@ public class configuracion {
 		this.serviceName = serviceName;
 	}
 
-	public String getEnpointAlpha() {
-		return enpointAlpha;
+	public String getEndpointAlpha() {
+		return endpointAlpha;
 	}
 
-	public void setEnpointAlpha(String enpointAlpha) {
-		this.enpointAlpha = enpointAlpha;
+	public void setEndpointAlpha(String endpointAlpha) {
+		this.endpointAlpha = endpointAlpha;
 	}
 }

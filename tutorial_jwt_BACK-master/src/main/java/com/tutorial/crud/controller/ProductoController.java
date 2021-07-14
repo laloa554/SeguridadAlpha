@@ -1,6 +1,7 @@
 package com.tutorial.crud.controller;
 
 import com.tutorial.crud.aopDao.endpoints;
+import com.tutorial.crud.entity.configuracion;
 import com.tutorial.crud.service.*;
 
 import javax.validation.Valid;
@@ -17,15 +18,14 @@ public class ProductoController {
 
     @Autowired
     ProductoService productoService;
+    
     @Autowired
     configuracionService configuracionService;
     
     @GetMapping("/getConsultaMiembroID")
     public void getConsultaMiembroID(@Valid @RequestBody String id ) { 
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Miembro/" + id;
-    	//String url = configuracionService.findByServiceName("getConsultaMiembroID").toString();
-    	//System.out.println(url);
-    	e.conectaApiClubGET(url);
+    	configuracion o = configuracionService.findByServiceName("getConsultaMiembroID").get();
+    	e.conectaApiClubGET(o.getEndpointAlpha() + id);
     }
     
     @PostMapping("/getRecibosCliente")
@@ -35,8 +35,8 @@ public class ProductoController {
     			+ "\"Fecha\":\"12/27/2019\",\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Pagos/GetRecibosByClienteFecha";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getRecibosCliente").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
     @PostMapping("/getPedido")
@@ -45,8 +45,8 @@ public class ProductoController {
     			+ "\"IdCliente\":60887,\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Pagos/GetPedidoByCliente";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getPedido").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
    @PostMapping("/getClientesById")
@@ -55,8 +55,8 @@ public class ProductoController {
     			+ "\"IDCliente\":60887,\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Clientes/GetClientesbyId";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getClientesById").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
     @PostMapping("/RegistraOV")
@@ -73,8 +73,8 @@ public class ProductoController {
     			+ "\"CobroProporcional\":0,\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/OrdenDeVenta/Registra";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("RegistraOV").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
     @PostMapping("/getLigaPago")
@@ -83,8 +83,8 @@ public class ProductoController {
     			+ "\"IdCliente\":60887,\n"
     			+ "\"Token\":\"10A4DF47-EAC7-45BD-8E2E-684989B4F0B0\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/LigaPago/ObtenLigaPago";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getLigaPago").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
     
@@ -94,8 +94,8 @@ public class ProductoController {
     			+ "\"NoPedido\":3,\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Pagos/GetPedidoById";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getPedidoById").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
     @PostMapping("/AsignaLigaPago")
@@ -105,8 +105,8 @@ public class ProductoController {
     			+ "\"Url\":\"https://wppsandbox.mit.com.mx/i/3EWWGWUM\",\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Pagos/AsignaLigaPago";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("AsignaLigaPago").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
     @PostMapping("/RegistraPago")
@@ -122,8 +122,8 @@ public class ProductoController {
     			+ "\"TitularCuenta\":\"Pascual\",\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Pagos/RegistraPago";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("RegistraPago").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
     @PostMapping("/ValidaAccesoClub")
@@ -133,8 +133,8 @@ public class ProductoController {
     			+ "\"Club\":\"Club Alpha 2\",\n"
     			+ "\"Token\":\"D42CD61C-9BD3-4359-8401-A223A35BDFA5\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/ControlAcceso/ValidaAccesoClub";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("ValidaAccesoClub").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
    @PostMapping("/getConfig")
@@ -143,8 +143,8 @@ public class ProductoController {
     			+ "\"Equipo\":\"AzureServer\",\n"
     			+ "\"Token\":\"10A4DF47-EAC7-45BD-8E2E-684989B4F0B0\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/TerminalConf/GetConfiguracion";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getConfig").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
    
    	@PostMapping("/ValidaEstatus")
@@ -153,8 +153,8 @@ public class ProductoController {
     			+ "\"Membresia\":\"1066250200\",\n"
     			+ "\"Token\":\"8CA09B3D-9AAB-4C88-8BED-A429EC5FB842\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Miembro/ValidaStatus/";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("ValidaEstatus").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
    @PostMapping("/getMiembroTG")
     public void getMiembroTG() {
@@ -162,8 +162,8 @@ public class ProductoController {
     			+ "\"Id\":\"27610\",\n"
     			+ "\"Token\":\"10A4DF47-EAC7-45BD-8E2E-684989B4F0B0\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/AlphaTraining/GetMiembro";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getMiembroTG").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
    
     @PostMapping("/getPasesById")
@@ -172,8 +172,8 @@ public class ProductoController {
     			+ "\"IDCliente\":9416,\n"
     			+ "\"Token\":\"77D5BDD4-1FEE-4A47-86A0-1E7D19EE1C74\"\n"
     			+ "}";
-    	String url = "http://192.168.20.26/ServiciosClubAlpha/api/Pases/GetPasesbyId";
-    	e.conectaApiClubPOST(body2,url);
+    	configuracion o = configuracionService.findByServiceName("getPasesById").get();
+    	e.conectaApiClubPOST(body2,o.getEndpointAlpha());
     }
     
 

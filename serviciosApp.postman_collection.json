@@ -6,19 +6,13 @@
 	},
 	"item": [
 		{
-			"name": "GetCliente",
+			"name": "AgregarUsuario",
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTYyNTY3NzE2NCwiZXhwIjoxNjI1NzEzMTY0fQ.E8Iwplu61DV2GTX24g_Zo7y735KK4sdJaxRTXyKRFutGksOmCh5-GbMKUMmJHnPCzMBd28NH9cKPWt5sb7tebQ",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"nombre\": \"admin\",\r\n    \"nombreUsuario\": \"admin\",\r\n    \"email\": \"laloa554@gmail.com\",\r\n    \"password\": \"admin\",\r\n    \"roles\": [\"admin\",\"user\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -26,15 +20,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/getClientesById",
+					"raw": "http://localhost:8080/auth/nuevo",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"api",
-						"getClientesById"
+						"auth",
+						"nuevo"
 					]
 				}
 			},
@@ -64,6 +58,32 @@
 					"path": [
 						"auth",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiAkMmEkMTAkbTR4a3RDbGxiTWh6Zjl3NEc1MEFhLktsMEJ3bEFVZlhOZHBETGFrMU5YcGsvNEJvczFmVWkiLCJpYXQiOjE2MjYyNzU2NjQsImV4cCI6MTYyNjMxMTY2NH0.GDL_EYCepN0tIOfeS3T2bmB01_k6jl-FxHQK4E7iVqPZ0ENPdyHxAIEJ60odTGlRaSkXivNNK1WGjAnWuUnjfQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/getClientesById",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"getClientesById"
 					]
 				}
 			},
@@ -116,35 +136,6 @@
 					"path": [
 						"api",
 						"getRecibosCliente"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "AgregarUsuario",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"admin\",\r\n    \"nombreUsuario\": \"admin\",\r\n    \"email\": \"laloa554@gmail.com\",\r\n    \"password\": \"admin\",\r\n    \"roles\": [\"admin\",\"user\"]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/auth/nuevo",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"auth",
-						"nuevo"
 					]
 				}
 			},
