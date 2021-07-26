@@ -60,6 +60,7 @@ Estos ejemlos estan disponibles en la colección de postman **ServiciosAppCopy**
 
 Por un metodo Post en postman en el siguiente endpoint: **192.168.20.57:8090/auth/nuevo**. En el cual se enviará un Json con lo siguiente:
 
+**Aun que dice que se usa un nombre y nombreUsuario estos serán llenados con la Membresia e ID de cliente respectivamente, no afecta en nada su funcionamiento.**
 
 ```
 {
