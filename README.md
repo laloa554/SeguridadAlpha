@@ -134,13 +134,21 @@ En caso contrario, devolverá un Json como este:
 El cual contiene el token de autorización que se usará para todas las acciones o enventos dentro de la aplicación, ademas de los roles que tiene el usuario, en este caso es de administrador,
 un usuario sin rol de adminitrador no tendrá acceso a otras acciones o enventos que el adminitrador sí. 
 
-Ejemplo de Json de un usuario simple:
+# **Ejemplo de Json de un usuario simple:**
 
+Por postman se envia el siguiente Json en el body:
+```
+{
+    "nombreUsuario": "123456",
+    "password": "123456.19980111"
+}
+```
+Donde devolverá lo siguiente en postman si el login es correcto: 
 ```
 {
     "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiAkMmEkMTAkbTR4a3RDbGxiTWh6Zjl3NEc1MEFhLktsMEJ3bEFVZlhOZHBETGFrMU5YcGsvNEJvczFmVWkiLCJpYXQiOjE2MjczMTU2MTEsImV4cCI6MTYyNzM1MTYxMX0.LtCqYE_-h73tJ3U9E-ppILjSAmvlTCuiBv3YYjzIc8B2hXx8c6svfIMR66h3XGvdkafte2aPJx0Zgw0wy6v60w",
     "bearer": "Bearer",
-    "nombreUsuario": "user",
+    "nombreUsuario": "123456",
     "authorities": [
         {
             "authority": "ROLE_USER"
