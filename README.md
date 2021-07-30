@@ -142,6 +142,10 @@ un usuario sin rol de adminitrador no tendrá acceso a otras acciones o enventos
 # **Ejemplo de Json de un usuario simple:**
 
 Por postman se envia el siguiente Json en el body:
+
+IdCliente
+
+password con formato IdCliente + . + fechaDeNacimiento (aaaa/mm/dd), sin / como en el siguiente ejemplo: 
 ```
 {
     "nombreUsuario": "123456",
