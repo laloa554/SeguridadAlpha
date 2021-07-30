@@ -66,9 +66,14 @@ Por un metodo Post en postman en el siguiente endpoint: **192.168.20.57:8090/aut
 {
     "nombre": "admin",
     "nombreUsuario": "admin",
-    "email": "laloa554@gmail.com",
+    "email": "admin@gmail.com",
     "password": "admin",
-    "roles": ["admin","user"]
+    "roles": ["admin","user"],
+    "estatus": "Cliente Vigente",
+    "cliente": "EDUARDO ALVARADO ALONSO",
+    "clienteTipo": "ESTANDAR",
+    "estatusCobranza": "Activo - Al Corriente",
+    "nivel1": "Club Alpha 3"
 }
 ```
 
