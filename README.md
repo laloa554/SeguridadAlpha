@@ -109,7 +109,7 @@ Por un metodo Post en postman en el siguiente endpoint: **192.168.20.57:8090/aut
 ```
 {
     "nombreUsuario": "admin",
-    "password": "admin"
+    "password": "F0G6sUwEK38="
 }
 ```
 
