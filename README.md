@@ -148,7 +148,7 @@ Por postman se envia el siguiente Json en el body:
 
 IdCliente
 
-password con formato IdCliente + . + fechaDeNacimiento (aaaa/mm/dd), sin / como en el siguiente ejemplo: 
+password con formato (ese es el formato de la contraseña, sin embargdo debe de ir cifrada) IdCliente + . + fechaDeNacimiento (aaaa/mm/dd), sin / como en el siguiente ejemplo: 
 ```
 {
     "nombreUsuario": "123456",
@@ -178,9 +178,6 @@ Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiAkMmEkMTAkbTR4a3RDbGxiTWh6Zjl3NEc1
 Una vez puesto ese encabezado se puede tener acceso a cualquiera de los WebServices que estan en la coleccion de postman **ServiciosDemoTest**
 
 
+# cifrado en typescript
 
-
-
-
-
-
+En el frontend se usa la bliblioteca **crypto-js** y el algoritmo DES para cifrar la contraseña antes de enviarla, pero previamente se define una llave de cifrado que comparten el backend y el frontend (más adelante se cambiará con un algoritmo más seguro como RSA). 
