@@ -32,6 +32,9 @@ spring:
     username: postgres
     password: 1234
     continueOnError: true
+my:
+    property:
+        s: encriptadoclubalphaprueba
 ```
 
 Comando paara cargar el archivo application.yml externo:
